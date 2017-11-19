@@ -31,45 +31,21 @@ public class Rechnung {
     }
 
 
-    public void setState ( RechnungsStatus status) {
-        this.state = status;
-    }
-
-    public RechnungsStatus getState () {
-        return state;
-    }
-
     public int getId () {
         return id;
-    }
-
-    public void setId ( int id ) {
-        this.id = id;
     }
 
     public String getDescription () {
         return description;
     }
 
-    public void setDescription ( String description ) {
-        this.description = description;
-    }
-
     public double getValue () {
         return value;
-    }
-
-    public void setValue ( double value ) {
-        this.value = value;
     }
 
 
     public String getStateStr () {
         return stateStr;
-    }
-
-    public void setStateStr ( String stateStr ) {
-        this.stateStr = stateStr;
     }
 
     public RechnungsStatus strToState(String strStatus) {
