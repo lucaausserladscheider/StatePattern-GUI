@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/TestFX.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Controller/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Controller/Controller$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Controller/Controller.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Controller/Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Database/Database.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Database/Database.class" />
@@ -16,7 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/StatusGeschlossen.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/StatusGeschlossen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/StatusOffen.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/StatusOffen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State_Pattern_GUI.iml" afterPath="$PROJECT_DIR$/State_Pattern_GUI.iml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -389,7 +386,7 @@
       <workItem from="1511106832662" duration="5152000" />
       <workItem from="1511118351840" duration="1691000" />
       <workItem from="1511120130380" duration="23000" />
-      <workItem from="1511120197115" duration="2346000" />
+      <workItem from="1511120197115" duration="2359000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.0">
       <created>1511104614950</created>
@@ -412,11 +409,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511110416180</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Version 1.2 incl doc">
+      <created>1511122558140</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1511122558140</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47817000" />
+    <option name="totallyTimeSpent" value="47830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
