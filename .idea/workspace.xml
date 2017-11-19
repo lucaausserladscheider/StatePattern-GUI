@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/Rechnung.class" afterPath="$PROJECT_DIR$/out/production/State_Pattern_GUI/Model/Rechnung.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State_Pattern_GUI.iml" afterPath="$PROJECT_DIR$/State_Pattern_GUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Rechnung.java" afterPath="$PROJECT_DIR$/src/Model/Rechnung.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,9 +70,11 @@
       <file leaf-file-name="ControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tests/ControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="1078">
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -277,7 +276,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ControllerTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="State_Pattern_GUI" />
@@ -504,7 +503,7 @@
       <workItem from="1511106832662" duration="5152000" />
       <workItem from="1511118351840" duration="1691000" />
       <workItem from="1511120130380" duration="23000" />
-      <workItem from="1511120197115" duration="7393000" />
+      <workItem from="1511120197115" duration="7529000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.0">
       <created>1511104614950</created>
@@ -541,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511122571073</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Version 1.3 incl test">
+      <created>1511128174476</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1511128174476</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -551,8 +557,8 @@
     <history-entry file="ControllerTest - 2017.11.19 at 22h 43m 19s.xml">
       <configuration name="ControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RechnungTest - 2017.11.19 at 22h 15m 57s.xml">
-      <configuration name="RechnungTest" configurationId="JUnit" />
+    <history-entry file="ControllerTest - 2017.11.19 at 22h 49m 48s.xml">
+      <configuration name="ControllerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RechnungTest - 2017.11.19 at 22h 16m 16s.xml">
       <configuration name="RechnungTest" configurationId="JUnit" />
@@ -577,7 +583,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52864000" />
+    <option name="totallyTimeSpent" value="53000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
@@ -595,7 +601,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1842246" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1842246" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -629,7 +635,8 @@
     <MESSAGE value="Version 1.0" />
     <MESSAGE value="Version 1.1" />
     <MESSAGE value="Version 1.2 incl doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.2 incl doc" />
+    <MESSAGE value="Version 1.3 incl test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.3 incl test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1406,9 +1413,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tests/ControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="1078">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
