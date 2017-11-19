@@ -1,22 +1,17 @@
 package Model;
 
+/**
+ * Status Bezahlt der von RechnungsStatus implementiert
+ */
 public class StatusBezahlt implements RechnungsStatus {
-    @Override
-    public void setState ( Rechnung rechnung) {
-        rechnung.setState ( this );
-    }
 
+    /**
+     * überschreibt dit toString des Interface RechnungsStatus
+     * @return String
+     */
     @Override
-    public StatusBezahlt getState () {
-        return this;
-    }
-
     public String toString() {
         return "bezahlt";
     }
 
-    @Override
-    public String getName () {
-        return "bezahlt";
-    }
 }

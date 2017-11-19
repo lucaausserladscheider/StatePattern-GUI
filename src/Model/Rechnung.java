@@ -1,5 +1,10 @@
 package Model;
 
+/**
+ * Klasse Rechnung haltet wichtige Datenfelder für die Speicherung in der Datenbank.
+ *
+ * @author Luca Ausserladscheider
+ */
 public class Rechnung {
 
     private int id;
@@ -9,6 +14,13 @@ public class Rechnung {
 
     private RechnungsStatus state;
 
+    /**
+     * Konstruktor, der eine Instanz richtig instanziert
+     * @param id
+     * @param description
+     * @param value
+     * @param stateStr
+     */
     public Rechnung(int id, String  description, double value, String stateStr) {
 
         this.id = id;
@@ -17,12 +29,6 @@ public class Rechnung {
         this.stateStr = stateStr;
         this.state = strToState ( stateStr );
     }
-//    public Rechnung(int id, String  description, double value, RechnungsStatus status) {
-//        this.id = id;
-//        this.value = value;
-//        this.description = description;
-//        this.state = status;
-//    }
 
 
     public void setState ( RechnungsStatus status) {

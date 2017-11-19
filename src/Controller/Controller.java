@@ -12,8 +12,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-
-
+/**
+ * Die Controller Klasse der sample.fxml View
+ * @author Luca Ausserladscheider
+ */
 public class Controller implements Initializable {
 
     ObservableList<String> stateList = FXCollections.observableArrayList (
@@ -38,7 +40,12 @@ public class Controller implements Initializable {
     @FXML
     private ChoiceBox<String> choiceBox;
 
-
+    /**
+     * überschreibt die initialize des Interface Initializeable
+     *
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize ( URL location, ResourceBundle resources ) {
         try {
@@ -49,14 +56,18 @@ public class Controller implements Initializable {
         }
     }
 
-    public void setCol () throws Exception {
+    /**
+     * Ruft zuerst die Controller.initial Methode auf um die TableView Columns zu initialisieren und anschließend
+     * werden die items auf die Tableview ausgegeben, je nach Status wird die Farbe der Zeile geändert (könnte man
+     * auslagern in eine eigen Funktion)
+     *
+     * @throws Exception
+     */
+    private void setCol () throws Exception {
         initial ();
 
         Model.RechnungDAO dao = new Model.RechnungDAO ();
         ObservableList<Rechnung> list = FXCollections.observableArrayList ( dao.getAllInvoices () );
-//        for(Invoice invoice : list) {
-//
-//        }
 
         table.setItems ( list );
 
@@ -82,30 +93,26 @@ public class Controller implements Initializable {
             }
         });
 
-//            item.getStateStr () == "geschlossen"
-
-//
-//        table.getColumns ().
-//
-//                addAll ();
-
-
     }
 
-    public void initial () throws Exception{
+    /**
+     * initial wird aufgerufen um die Zeilen zu initialisieren
+     *
+     * @throws Exception
+     */
+    private void initial () throws Exception{
         ColID.setCellValueFactory ( new PropertyValueFactory<> ( "id" ) );
         ColDesc.setCellValueFactory ( new PropertyValueFactory<> ( "description" ) );
         ColValue.setCellValueFactory ( new PropertyValueFactory<> ( "value" ) );
         ColState.setCellValueFactory ( new PropertyValueFactory<> ( "stateStr" ) );
-
-//        ColID.setSortable ( false );
-//        ColDesc.setSortable ( false );
-//        ColValue.setSortable ( false );
-//        ColState.setSortable ( false );
-
         choiceBox.setItems ( stateList );
     }
 
+    /**
+     * Wird aufgerufen, wenn eine Zeile in der TabelView angeklckt wird
+     *
+     * @throws Exception
+     */
     public void tableClick () throws Exception {
         ObservableList list = table.getSelectionModel ().getSelectedItems ();
         Rechnung rechnung = (Rechnung) list.get ( 0 );
@@ -116,19 +123,23 @@ public class Controller implements Initializable {
         choiceBox.setValue ( rechnung.getStateStr () );
     }
 
-
+    /**
+     * Wird aufgerufen, wenn auf der GUI der Button "aktualisieren" gedrückt wird
+     *
+     * @throws Exception
+     */
     public void setChanges () throws Exception {
         int idEnd = Integer.parseInt ( id.getText () );
         String descEnd = desc.getText ();
         double valueEnd = Double.parseDouble ( value.getText () );
         RechnungsStatus state;
-        if (choiceBox.getValue () == "offen") {
+        if (choiceBox.getValue ().equals ( "offen" )) {
             state = new StatusOffen ();
-        } else if (choiceBox.getValue () == "bezahlt") {
+        } else if (choiceBox.getValue ().equals ( "bezahlt" )) {
             state = new StatusBezahlt ();
-        } else if (choiceBox.getValue () == "gemahnt") {
+        } else if (choiceBox.getValue ().equals ( "gemahnt" )) {
             state = new StatusGemahnt ();
-        } else if (choiceBox.getValue () == "geschlossen") {
+        } else if (choiceBox.getValue ().equals ( "geschlossen" )) {
             state = new StatusGeschlossen ();
         } else {
             state = new StatusOffen ();

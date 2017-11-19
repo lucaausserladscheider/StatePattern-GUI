@@ -1,19 +1,17 @@
 package Model;
 
+/**
+ * Status Geschlossen der von RechnungsStatus implementiert
+ */
 public class StatusGeschlossen implements RechnungsStatus {
-    @Override
-    public void setState ( Rechnung rechnung) {
-        rechnung.setState ( this );
-    }
-    public StatusGeschlossen getState () {
-        return this;
-    }
 
+    /**
+     * überschreibt dit toString des Interface RechnungsStatus
+     * @return String
+     */
+    @Override
     public String toString() {
         return "geschlossen";
     }
-    @Override
-    public String getName () {
-        return "geschlossen";
-    }
+
 }

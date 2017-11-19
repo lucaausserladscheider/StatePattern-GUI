@@ -1,20 +1,16 @@
 package Model;
 
+/**
+ * Status Offen der von RechnungsStatus implementiert
+ */
 public class StatusOffen implements RechnungsStatus {
+
+    /**
+     * überschreibt dit toString des Interface RechnungsStatus
+     * @return String
+     */
     @Override
-    public void setState ( Rechnung rechnung) {
-        rechnung.setState ( this );
-    }
-
-    public StatusOffen getState () {
-        return this;
-    }
-
     public String toString() {
-        return "offen";
-    }
-    @Override
-    public String getName () {
         return "offen";
     }
 }

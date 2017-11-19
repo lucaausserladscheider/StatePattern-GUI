@@ -1,10 +1,14 @@
 package Model;
 
+/**
+ * Interface der verschiedenen Rechnungsstatuse
+ */
 public interface RechnungsStatus {
 
-    public void setState( Rechnung rechnung);
-    public RechnungsStatus getState();
-    public String toString();
-    public String getName();
+    /**
+     * gibt einen String des gewünschten Status zurück
+     * @return String
+     */
+    String toString();
 
 }

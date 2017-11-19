@@ -8,8 +8,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * RechnungDAO ist meine Data Access Object Class und ist verantwortlich für den Daten
+ * austausch mit der Datenbank
+ *
+ * @author Luca Ausserladscheider
+ */
 public class RechnungDAO {
 
+    /**
+     * Gibt alle Rechnung die in der Datenbank gespeichert sind zurück
+     *
+     * @return ArrayList<Rechnung>
+     */
     public ArrayList<Rechnung> getAllInvoices() {
 
         try {
@@ -28,6 +39,10 @@ public class RechnungDAO {
             return null;
         }
     }
+
+    /**
+     * Methode um geänderte Werte zu speichern
+     */
     public void updateRechnung( Rechnung rechnung) {
         try {
             PreparedStatement myStmt = Database.getInstance ().getConnection ().prepareStatement ("UPDATE rechnung set id = ?, description = ?, value = ?, state = ? where ID = ?");
@@ -40,12 +55,6 @@ public class RechnungDAO {
 
 
             myStmt.executeUpdate ();
-
-//            Statement myStmt = myConn.createStatement ();
-//            String sql = "insert into invoice (datum, description, wert, paid ) values (datum, description, wert, paid)";
-//            myStmt.executeUpdate (sql);
-
-//            System.out.println ("Update Data complete!");
 
         } catch (SQLException e) {
             e.printStackTrace ();

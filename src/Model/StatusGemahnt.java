@@ -1,19 +1,17 @@
 package Model;
 
+/**
+ * Status Gemahnt der von RechnungsStatus implementiert
+ */
 public class StatusGemahnt implements RechnungsStatus {
-    @Override
-    public void setState ( Rechnung rechnung) {
-        rechnung.setState ( this );
-    }
-    public StatusGemahnt getState () {
-        return this;
-    }
 
+    /**
+     * überschreibt dit toString des Interface RechnungsStatus
+     * @return String
+     */
+    @Override
     public String toString() {
         return "gemahnt";
     }
-    @Override
-    public String getName () {
-        return "gemahnt";
-    }
+
 }
