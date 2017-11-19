@@ -20,7 +20,7 @@ public class Controller implements Initializable {
             new StatusOffen ().toString (), new StatusBezahlt ().toString (), new StatusGemahnt ().toString (), new StatusGeschlossen ().toString () );
 
     @FXML
-    private TableView table;
+    private TableView<Rechnung> table;
     @FXML
     private TableColumn<Rechnung, Integer> ColID;
     @FXML

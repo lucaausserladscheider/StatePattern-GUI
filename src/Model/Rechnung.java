@@ -15,12 +15,13 @@ public class Rechnung {
         this.description = description;
         this.value = value;
         this.stateStr = stateStr;
+        this.state = strToState ( stateStr );
     }
 //    public Rechnung(int id, String  description, double value, RechnungsStatus status) {
-//        this.state = status;
 //        this.id = id;
-//        this.description = description;
 //        this.value = value;
+//        this.description = description;
+//        this.state = status;
 //    }
 
 
@@ -63,5 +64,19 @@ public class Rechnung {
 
     public void setStateStr ( String stateStr ) {
         this.stateStr = stateStr;
+    }
+
+    public RechnungsStatus strToState(String strStatus) {
+        if (strStatus.equals ( "offen" )) {
+            return new StatusOffen ();
+        } else if (strStatus.equals ( "bezahlt" )) {
+            return new StatusBezahlt ();
+        } else if (strStatus.equals ( "gemahnt" )) {
+            return new StatusGemahnt ();
+        } else if (strStatus.equals ( "geschlossen" )) {
+            return new StatusGeschlossen ();
+        } else {
+            return null;
+        }
     }
 }
