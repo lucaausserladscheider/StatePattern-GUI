@@ -10,7 +10,6 @@ public class Rechnung {
     private int id;
     private String description;
     private double value;
-    private String stateStr;
 
     private RechnungsStatus state;
 
@@ -26,39 +25,52 @@ public class Rechnung {
         this.id = id;
         this.description = description;
         this.value = value;
-        this.stateStr = stateStr;
-        this.state = strToState ( stateStr );
+        this.state = RechnungsStatus.strToState ( stateStr );
     }
 
-
+    /**
+     * gibt die ID zurück
+     * @return int
+     */
     public int getId () {
         return id;
     }
 
+    /**
+     * gibt die description zurück
+     * @return String
+     */
     public String getDescription () {
         return description;
     }
 
+    /**
+     * gibt den Wert zurück
+     * @return double
+     */
     public double getValue () {
         return value;
     }
 
+    /**
+     * wandelt einen String von der Datenbank oder Choicebox in einen gültigen Status
+     * @param strStatus
+     * @return RechnungsStatus
+     */
 
-    public String getStateStr () {
-        return stateStr;
+    /**
+     * setzt den Status in den übergebenen State
+     * @param state
+     */
+    public void setState(RechnungsStatus state) {
+        this.state = state;
     }
 
-    public RechnungsStatus strToState(String strStatus) {
-        if (strStatus.equals ( "offen" )) {
-            return new StatusOffen ();
-        } else if (strStatus.equals ( "bezahlt" )) {
-            return new StatusBezahlt ();
-        } else if (strStatus.equals ( "gemahnt" )) {
-            return new StatusGemahnt ();
-        } else if (strStatus.equals ( "geschlossen" )) {
-            return new StatusGeschlossen ();
-        } else {
-            return null;
-        }
+    /**
+     * gibt den aktuellen RechnungsStatus zurück
+     * @return
+     */
+    public RechnungsStatus getState() {
+        return this.state;
     }
 }

@@ -18,8 +18,8 @@ import java.util.ResourceBundle;
  */
 public class Controller implements Initializable {
 
-    ObservableList<String> stateList = FXCollections.observableArrayList (
-            new StatusOffen ().toString (), new StatusBezahlt ().toString (), new StatusGemahnt ().toString (), new StatusGeschlossen ().toString () );
+    private ObservableList<String> stateList = FXCollections.observableArrayList (
+            new StatusOffen ().toString (), new StatusBezahlt ().toString (), new StatusGemahnt ().toString (), new StatusGeschlossen ().toString ());
 
     @FXML
     private TableView<Rechnung> table;
@@ -78,13 +78,13 @@ public class Controller implements Initializable {
 
                 if (item == null) {
                     setStyle ( "" );
-                } else if (item.getStateStr ().equals ( "offen" )) {
+                } else if (item.getState ().toString ().equals ( "offen" )) {
                     setStyle ( "-fx-background-color: lightcyan;" );
-                } else if (item.getStateStr ().equals ( "bezahlt" )) {
+                } else if (item.getState ().toString ().equals ( "bezahlt" )) {
                     setStyle ( "-fx-background-color: lightgreen;" );
-                }else if (item.getStateStr ().equals ( "gemahnt" )) {
+                }else if (item.getState ().toString ().equals ( "gemahnt" )) {
                     setStyle ( "-fx-background-color: lightcoral;" );
-                }else if (item.getStateStr ().equals ( "geschlossen" )) {
+                }else if (item.getState ().toString ().equals ( "geschlossen" )) {
                     setStyle ( "-fx-background-color: lightblue;" );
                 }else {
                     System.out.println ( "Else" );
@@ -96,7 +96,7 @@ public class Controller implements Initializable {
     }
 
     /**
-     * initial wird aufgerufen um die Zeilen zu initialisieren
+     * initial wird aufgerufen um die GUI Elemente zu initialisieren
      *
      * @throws Exception
      */
@@ -104,12 +104,13 @@ public class Controller implements Initializable {
         ColID.setCellValueFactory ( new PropertyValueFactory<> ( "id" ) );
         ColDesc.setCellValueFactory ( new PropertyValueFactory<> ( "description" ) );
         ColValue.setCellValueFactory ( new PropertyValueFactory<> ( "value" ) );
-        ColState.setCellValueFactory ( new PropertyValueFactory<> ( "stateStr" ) );
+        ColState.setCellValueFactory ( new PropertyValueFactory<> ( "state" ) );
         choiceBox.setItems ( stateList );
+
     }
 
     /**
-     * Wird aufgerufen, wenn eine Zeile in der TabelView angeklckt wird
+     * Wird aufgerufen, wenn eine Zeile in der TabelView angeklickt wird und füllt das Formular mit dem gewählten Object
      *
      * @throws Exception
      */
@@ -120,11 +121,13 @@ public class Controller implements Initializable {
         desc.setText ( rechnung.getDescription () );
         id.setText ( Integer.toString ( rechnung.getId () ) );
         value.setText ( Double.toString ( rechnung.getValue () ) );
-        choiceBox.setValue ( rechnung.getStateStr () );
+        choiceBox.setValue (rechnung.getState ().toString ());
+
     }
 
     /**
      * Wird aufgerufen, wenn auf der GUI der Button "aktualisieren" gedrückt wird
+     * und speichert die Änderungen
      *
      * @throws Exception
      */
@@ -132,21 +135,15 @@ public class Controller implements Initializable {
         int idEnd = Integer.parseInt ( id.getText () );
         String descEnd = desc.getText ();
         double valueEnd = Double.parseDouble ( value.getText () );
-        RechnungsStatus state;
-        if (choiceBox.getValue ().equals ( "offen" )) {
-            state = new StatusOffen ();
-        } else if (choiceBox.getValue ().equals ( "bezahlt" )) {
-            state = new StatusBezahlt ();
-        } else if (choiceBox.getValue ().equals ( "gemahnt" )) {
-            state = new StatusGemahnt ();
-        } else if (choiceBox.getValue ().equals ( "geschlossen" )) {
-            state = new StatusGeschlossen ();
-        } else {
-            state = new StatusOffen ();
-        }
+        RechnungsStatus state = RechnungsStatus.strToState(choiceBox.getValue ());
 
         RechnungDAO dao = new RechnungDAO ();
-        Rechnung rechnung = new Rechnung ( idEnd, descEnd, valueEnd, state.toString () );
+        Rechnung rechnung = null;
+        try {
+            rechnung = new Rechnung ( idEnd, descEnd, valueEnd, state.toString () );
+        } catch (Exception e) {
+            e.printStackTrace ();
+        }
         dao.updateRechnung ( rechnung );
 
         setCol ();

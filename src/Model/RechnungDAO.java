@@ -50,7 +50,7 @@ public class RechnungDAO {
             myStmt.setInt ( 1, rechnung.getId () );
             myStmt.setString ( 2, rechnung.getDescription () );
             myStmt.setDouble ( 3, rechnung.getValue () );
-            myStmt.setString ( 4, rechnung.getStateStr () );
+            myStmt.setString ( 4, rechnung.getState ().toString () );
             myStmt.setInt ( 5, rechnung.getId () );
 
 
